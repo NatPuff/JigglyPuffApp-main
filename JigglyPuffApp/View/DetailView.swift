@@ -19,6 +19,8 @@ struct DetailView: View {
     var body: some View {
         VStack{
         Text(moveData.move)
+                .font(.title)
+                .bold()
         GifImageView(moveData.gifName)
         .scaledToFit()
         .padding()
