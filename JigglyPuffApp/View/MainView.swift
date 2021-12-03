@@ -13,46 +13,48 @@ struct MainView: View {
     var body: some View {
         
         TabView{
-            ZStack {
-                VStack{
+            ZStack{
+                ZStack{
                 Image("pink background")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 900, height: 860)
-                Spacer()
+                    .ignoresSafeArea()
+                   .frame(width: 900, height: 860)
+              
                     .frame(height: 95)
                 }
-            Button(action: {
-                crouchShow.toggle()
-            }){
-                if crouchShow == false{
-                   
-             
-                Image("yag")
-                        .interpolation(.none)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    
-                } else{
-                    Image("SmoshPuff")
-                        .interpolation(.none)
+            ZStack{
+                Button(action: {
+                    crouchShow.toggle()
+                }){
+                    if crouchShow == false{
+                       
+                    Image("yag")
+                            .interpolation(.none)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
+                        
+                    } else{
+                        Image("SmoshPuff")
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                    }
                 }
             }
-                
-                
-                
             }
-        
+            
+            
         .tabItem {
             Image("CoolPuff")
+          
                 .resizable()
-                .scaledToFit()
-                .frame(width: 20, height: 20)
+              
         }
+ 
+            
             MovesList()
                 .tabItem {
                     Image(systemName: "doc.plaintext")

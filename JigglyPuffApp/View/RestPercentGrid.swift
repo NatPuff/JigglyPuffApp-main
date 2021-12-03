@@ -31,7 +31,7 @@ struct RestPercentGrid: View {
             Text("FD: " + String(restData.FD))
                 .padding(.trailing)
             Text("SBF plat: " + String(restData.SBFplat))
-                
+                .padding()
          
         }
     }
